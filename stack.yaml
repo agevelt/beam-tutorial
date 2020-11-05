@@ -1,1 +1,14 @@
-resolver: lts-14.20
+resolver: lts-15.5
+extra-deps:
+- direct-sqlite-2.3.26
+- constraints-extras-0.3.0.2
+- sqlite-simple-0.4.18.0
+- dependent-map-0.3
+- dependent-sum-0.6.2.0
+- github: folq/beam
+  commit: 2f579aa696a6f04996285ad0f4e504031e410fa4
+  subdirs:
+  - beam-core
+  - beam-migrate
+  - beam-postgres
+  - beam-sqlite
