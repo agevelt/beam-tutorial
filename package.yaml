@@ -1,0 +1,67 @@
+name: beam-tutorial
+version: '0.1.0'
+synopsis: beam tutorial
+description: Please see README.md
+category: Web
+license: AllRightsReserved
+
+ghc-options:
+  - -Wall
+  - -Wcompat
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wmissing-home-modules
+  - -Wpartial-fields
+  - -Wredundant-constraints
+  - -Wtabs
+  - -funbox-strict-fields
+
+_exe-ghc-options: &exe-ghc-options
+  - -threaded
+  - -rtsopts
+  - -with-rtsopts=-N
+
+default-extensions:
+  - DataKinds
+  - DeriveGeneric
+  - DerivingVia
+  - DeriveAnyClass
+  - DuplicateRecordFields
+  - FlexibleContexts
+  - FlexibleInstances
+  - FunctionalDependencies
+  - GeneralizedNewtypeDeriving
+  - MultiParamTypeClasses
+  - OverloadedLabels
+  - OverloadedStrings
+  - RankNTypes
+  - StandaloneDeriving
+  - TemplateHaskell
+  - TypeApplications
+  - TypeFamilies
+  - TypeOperators
+  - TypeSynonymInstances
+
+library:
+    source-dirs: src
+    dependencies:
+      - base
+      - beam-core
+      - beam-sqlite
+      - sqlite-simple
+      - beam-migrate
+      - text
+
+executables:
+  beam-tutorial:
+    main: Main.hs
+    source-dirs: app
+    dependencies:
+      - base
+      - beam-core
+      - beam-sqlite
+      - sqlite-simple
+      - beam-migrate
+      - text
+    ghc-options: *exe-ghc-options

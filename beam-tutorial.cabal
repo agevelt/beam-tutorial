@@ -1,0 +1,48 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           beam-tutorial
+version:        0.1.0
+synopsis:       beam tutorial
+description:    Please see README.md
+category:       Web
+license:        AllRightsReserved
+build-type:     Simple
+
+library
+  exposed-modules:
+      DB
+  other-modules:
+      Paths_beam_tutorial
+  hs-source-dirs:
+      src
+  default-extensions: DataKinds DeriveGeneric DerivingVia DeriveAnyClass DuplicateRecordFields FlexibleContexts FlexibleInstances FunctionalDependencies GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedLabels OverloadedStrings RankNTypes StandaloneDeriving TemplateHaskell TypeApplications TypeFamilies TypeOperators TypeSynonymInstances
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wtabs -funbox-strict-fields
+  build-depends:
+      base
+    , beam-core
+    , beam-migrate
+    , beam-sqlite
+    , sqlite-simple
+    , text
+  default-language: Haskell2010
+
+executable beam-tutorial
+  main-is: Main.hs
+  other-modules:
+      Paths_beam_tutorial
+  hs-source-dirs:
+      app
+  default-extensions: DataKinds DeriveGeneric DerivingVia DeriveAnyClass DuplicateRecordFields FlexibleContexts FlexibleInstances FunctionalDependencies GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedLabels OverloadedStrings RankNTypes StandaloneDeriving TemplateHaskell TypeApplications TypeFamilies TypeOperators TypeSynonymInstances
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wtabs -funbox-strict-fields -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base
+    , beam-core
+    , beam-migrate
+    , beam-sqlite
+    , sqlite-simple
+    , text
+  default-language: Haskell2010
